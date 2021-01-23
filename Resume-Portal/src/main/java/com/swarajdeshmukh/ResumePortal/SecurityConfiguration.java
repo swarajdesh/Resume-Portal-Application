@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/edit").authenticated() //if it has /edit you should authenticate
-                .antMatchers("/user").permitAll()  //if it has /user permit everybody
+                .antMatchers("/*").permitAll()  //if it has /user permit everybody
                 .and().formLogin();
     }
 
