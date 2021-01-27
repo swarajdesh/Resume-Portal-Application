@@ -29,6 +29,6 @@ public class HomeController {
     //Model is spring MVC class which allows me to putsomething on return type
     {
         model.addAttribute("userId", userId);
-        return "profile";
+        return "profile-templates/2/index";
     }
 }
