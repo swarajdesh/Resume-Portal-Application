@@ -19,6 +19,39 @@ public class UserProfile {
     private String phone;
     private String designation;
 
+
+    @OneToMany(cascade = CascadeType.ALL,
+        orphanRemoval = true)
+            //jobs are associated with profile so whatever happens to profile need to happen to jobs
+    @JoinColumn(name = "job_id")
+    List<Job> jobs = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    @JoinColumn(name = "education_id")
+    List<Education> educations = new ArrayList<>();
+
+    @ElementCollection(targetClass=String.class)
+    List<String> skills = new ArrayList<>();
+
+    public List<String> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<String> skills) {
+        this.skills = skills;
+    }
+
+    public List<Education> getEducations() {
+        return educations;
+    }
+
+    public void setEducations(List<Education> educations) {
+        this.educations = educations;
+    }
+
+
+
     public List<Job> getJobs() {
         return jobs;
     }
@@ -27,25 +60,19 @@ public class UserProfile {
         this.jobs = jobs;
     }
 
-    @OneToMany(cascade = CascadeType.ALL,
-        orphanRemoval = true)
-            //jobs are associated with profile so whatever happens to profile need to happen to jobs
-    @JoinColumn(name = "job_id")
-    List<Job> jobs = new ArrayList<>();
-
-    public String getfirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setfirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public String getlastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setlastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
