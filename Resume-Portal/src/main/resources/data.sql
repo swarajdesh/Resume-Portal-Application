@@ -4,6 +4,6 @@ insert into user (id, user_name, password, active, roles) values
 
 
 
-insert into user_profile (id, user_name, theme, summary) values
-(1, 'einstein', '1', 'Developed the theory of relativity , one of the two pillars of mordern physics '),
-(2, 'newton', '2', 'Sir Isaac Newton PRS was an English mathematician, physicist, astronomer, theologian, and author who is widely recognised as one of the most influential scientists of all time and as a key figure in the scientific revolution.');
+insert into user_profile (id, user_name, theme, summary, first_name, last_name, email, phone, designation) values
+(1, 'einstein', 1, 'Developed the theory of relativity, one of the two pillars of modern physics. My work is also known for its influence on the philosophy of science.', 'Albert', 'Einstein', 'einstein@gmail.com', '111-111-1111', 'Theoretical physicist'),
+(2, 'newton', 2, 'Widely recognised as one of the most influential scientists of all time and as a key figure in the scientific revolution', 'Isaac', 'Newton', 'newton@gmail.com', '222-222-2222', 'Mathematician, physicist, astronomer, theologian, and author');
